@@ -1,0 +1,7 @@
+C:\Users\Aluno\Desktop\TimeLockCs\TimeLock\TimeLock\bin\Debug\TimeLock.exe.config
+C:\Users\Aluno\Desktop\TimeLockCs\TimeLock\TimeLock\bin\Debug\TimeLock.exe
+C:\Users\Aluno\Desktop\TimeLockCs\TimeLock\TimeLock\bin\Debug\TimeLock.pdb
+C:\Users\Aluno\Desktop\TimeLockCs\TimeLock\TimeLock\obj\Debug\TimeLock.csproj.AssemblyReference.cache
+C:\Users\Aluno\Desktop\TimeLockCs\TimeLock\TimeLock\obj\Debug\TimeLock.csproj.CoreCompileInputs.cache
+C:\Users\Aluno\Desktop\TimeLockCs\TimeLock\TimeLock\obj\Debug\TimeLock.exe
+C:\Users\Aluno\Desktop\TimeLockCs\TimeLock\TimeLock\obj\Debug\TimeLock.pdb

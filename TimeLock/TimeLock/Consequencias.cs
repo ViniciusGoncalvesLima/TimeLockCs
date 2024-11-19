@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TimeLock
 {
-    internal class Fim
+    internal class Consequencias
     {
     }
 }

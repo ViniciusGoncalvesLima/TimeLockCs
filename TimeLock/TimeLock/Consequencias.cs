@@ -8,5 +8,14 @@ namespace TimeLock
 {
     internal class Consequencias
     {
+        public int Dinheiro { get; set; }
+        public int RelSocial { get; set; }
+        public int Ambiental { get; set; }
+        public int Projeto { get; set; }
+
+        public Consequencias(string pergunta, int valorPergunta, int escolha)
+        {
+            
+        }
     }
 }

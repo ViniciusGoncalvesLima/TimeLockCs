@@ -12,7 +12,6 @@ namespace TimeLock
         {
             Pergunta pergunta = new Pergunta();
             pergunta.GerarPergunta();
-            Console.ReadLine();
         }
     }
 }

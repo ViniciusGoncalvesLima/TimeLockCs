@@ -12,6 +12,7 @@ namespace TimeLock
         public int RelSocial = 50;
         public int Ambiental = 50;
         public int Projeto = 15;
+        public int Situacao = 0;
 
         EndGame endGame = new EndGame();
 
@@ -170,7 +171,8 @@ namespace TimeLock
 
         public int Game()
         {
-            return endGame.Endings(Dinheiro, RelSocial, Ambiental, Projeto);
+            Situacao++;
+            return endGame.Endings(Dinheiro, RelSocial, Ambiental, Projeto, Situacao);
         }
     }
 }

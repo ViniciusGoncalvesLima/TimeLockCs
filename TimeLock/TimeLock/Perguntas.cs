@@ -44,6 +44,7 @@ namespace TimeLock
         {
             Random random = new Random();
             int valor = 0;
+            lista.Clear();
             foreach (var pergunta in perguntas)
             {
                 if (pergunta.Value <= 100 && pergunta.Value > 0)

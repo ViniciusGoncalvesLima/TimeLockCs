@@ -34,12 +34,13 @@ namespace TimeLock
         };
 
         public List<KeyValuePair<string, int>> lista;
+        Consequencias consequencias = new Consequencias();
         public Pergunta()
         {
             lista = new List<KeyValuePair<string, int>>();
         }
 
-        public void GerarPergunta()
+        public int GerarPergunta()
         {
             Random random = new Random();
             int valor = 0;
@@ -59,26 +60,21 @@ namespace TimeLock
             Console.WriteLine("Escolha:");
             Console.WriteLine(respostas[numeroAleatorio]);
             int escolha = int.Parse(Console.ReadLine());
+            Console.WriteLine("");
 
-            //Consequencias consequencias = new Consequencias(lista[numeroAleatorio].Key, lista[numeroAleatorio].Value, escolha);
+            consequencias.Consequencia(lista[numeroAleatorio].Key, escolha);
             for (int i = 0; i < perguntas.Count; i++)
             {
                 var pergunta = perguntas.ElementAt(i);
-                Console.WriteLine(perguntas[pergunta.Key]%100);
-                Console.WriteLine(perguntas[lista[numeroAleatorio].Key]);
-                Console.WriteLine("");
                 if (pergunta.Value % 100 == perguntas[lista[numeroAleatorio].Key] && pergunta.Value != perguntas[lista[numeroAleatorio].Key])
                 {
                     perguntas[pergunta.Key] -= 100;
-                    Console.WriteLine(perguntas[pergunta.Key]);
-                    Console.WriteLine("");
                 }
             }
             perguntas[lista[numeroAleatorio].Key] = 0;
-            foreach (var pergunta in perguntas)
-            {
-                Console.WriteLine(perguntas[pergunta.Key]);
-            }
+
+            int fim = 0;
+            return fim = consequencias.Game();
 
         }
     }

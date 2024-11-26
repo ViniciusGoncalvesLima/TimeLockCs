@@ -11,7 +11,16 @@ namespace TimeLock
         static void Main(string[] args)
         {
             Pergunta pergunta = new Pergunta();
-            pergunta.GerarPergunta();
+            Consequencias consequencias = new Consequencias();
+            int fim = 0;
+            while (true)
+            {
+                fim = pergunta.GerarPergunta();
+                if (fim == 1)
+                {
+                    break;
+                }
+            }
         }
     }
 }

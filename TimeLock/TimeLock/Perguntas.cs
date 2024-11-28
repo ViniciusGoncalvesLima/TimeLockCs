@@ -33,46 +33,50 @@ namespace TimeLock
             "1 (Dar férias) ou 2 (Vai trabalhar ô)"
         };
 
-        public List<KeyValuePair<string, int>> lista;
+        public List<KeyValuePair<string, int>> listap;
+        public List<KeyValuePair<string, int>> listar;
         Consequencias consequencias = new Consequencias();
         public Pergunta()
         {
-            lista = new List<KeyValuePair<string, int>>();
+            listap = new List<KeyValuePair<string, int>>();
+            listar = new List<KeyValuePair<string, int>>();
         }
 
         public int GerarPergunta()
         {
             Random random = new Random();
             int valor = 0;
-            lista.Clear();
+            listap.Clear();
+            listar.Clear();
             foreach (var pergunta in perguntas)
             {
                 if (pergunta.Value <= 100 && pergunta.Value > 0)
                 {
-                    valor++;
-                    lista.Add(new KeyValuePair<string, int>(pergunta.Key, valor));
+                    listap.Add(new KeyValuePair<string, int>(pergunta.Key, valor));
+                    listar.Add(new KeyValuePair<string, int>(respostas[valor], pergunta.Value));
                 }
+                valor++;
             }
-            int numeroAleatorio = random.Next() % valor;
+            int numeroAleatorio = random.Next() % listap.Count;
 
             Console.WriteLine("Pergunta:");
-            Console.WriteLine(lista[numeroAleatorio].Key);
+            Console.WriteLine(listap[numeroAleatorio].Key);
             Console.WriteLine("");
             Console.WriteLine("Escolha:");
-            Console.WriteLine(respostas[numeroAleatorio]);
+            Console.WriteLine(listar[numeroAleatorio].Key);
             int escolha = int.Parse(Console.ReadLine());
             Console.WriteLine("");
 
-            consequencias.Consequencia(lista[numeroAleatorio].Key, escolha);
+            consequencias.Consequencia(listap[numeroAleatorio].Key, escolha);
             for (int i = 0; i < perguntas.Count; i++)
             {
                 var pergunta = perguntas.ElementAt(i);
-                if (pergunta.Value % 100 == perguntas[lista[numeroAleatorio].Key] && pergunta.Value != perguntas[lista[numeroAleatorio].Key])
+                if (pergunta.Value % 100 == perguntas[listap[numeroAleatorio].Key] && pergunta.Value != perguntas[listap[numeroAleatorio].Key])
                 {
                     perguntas[pergunta.Key] -= 100;
                 }
             }
-            perguntas[lista[numeroAleatorio].Key] = 0;
+            perguntas[listap[numeroAleatorio].Key] = 0;
 
             int fim = 0;
             return fim = consequencias.Game();
